@@ -30,11 +30,8 @@ h3{
     opacity: .4;
 }
 .sidebar-button{
-    color: rgb(199, 196, 196);
     display: block;
     text-align: left;
-    background-color: rgb(85, 84, 84);
-    border: unset;
 }
 .sidebar{
     background-color: rgb(167, 165, 165);
