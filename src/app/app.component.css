@@ -1,7 +1,7 @@
 body{
     font-family: Calibri;
 }
-h3{
+h2, h3, h4, h5{
     font-family: Calibri;
 }
 .main-toolbar{
@@ -42,5 +42,61 @@ h3{
     height: calc(100% - 3.5em);
     width: 12em;
     top: 3.5em;
+    position: absolute;
+}
+
+.team-profile-main{
+    border: solid 1px #808080;
+    height: 33.5em;
+    width: 40em;
+    left: 12em;
+    background-color: #fff;
+    position: absolute;
+    top: 3.5em;
+}
+.team-profile-topbar{
+    text-align: center;
+    background-color: #fff;
+    height: 7em;
+    width: 100%;
+}
+.team-profile-title{
+    display: inline;
+    width: 100%;
+    text-align: center;
+}
+.team-profile-conf-logo{
+    float: left;
+}
+.team-profile-team-logo{
+    vertical-align: middle;
+}
+.team-profile-record {
+    margin: unset;
+}
+.team-profile-division{
+    float: left;
+    left: .5em;
+    position: absolute;
+    margin-top: 2.5em;
+}
+.team-profile-rank{
+    float: left;
+    left: 1em;
+    position: absolute;
+    margin-top: 3.5em;
+}
+.team-profile-link{
+    position: absolute;
+    top: .2em;
+    right: 1em;
+}
+.team-profile-map{
+    float: right;
+    width: 18em;
+    height: 12em;
+    background-color: rgb(62, 122, 62);
+    top: 8em;
+    right: 1em;
     position: absolute;
 }
