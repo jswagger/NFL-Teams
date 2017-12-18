@@ -6,8 +6,8 @@ Utilizes NFL API for up-to-date statistics.
 
 Built in Angular 5, utilizing the following:
 
-Angular Material Library
-Angular Animations
+Angular Material Library,
+Angular Animations,
 SASS
 
 
