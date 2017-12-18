@@ -1,5 +1,6 @@
 body{
     font-family: Calibri;
+    margin: unset;
 }
 h2, h3, h4, h5{
     font-family: Calibri;
@@ -8,9 +9,9 @@ h2, h3, h4, h5{
     background-color: rgb(85, 84, 84);
     color: rgb(184, 182, 182);
     font-family: Calibri;
-    font-size: 24px;
+    font-size: 34px;
     font-weight: bold;
-    height: 2em;
+    height: 1.3em;
     text-align: center;
     width: 100%
 }
@@ -29,19 +30,12 @@ h2, h3, h4, h5{
 .main-logo{
     opacity: .4;
 }
-.sidebar-button{
-    color: rgb(199, 196, 196);
-    display: block;
-    text-align: left;
-    background-color: rgb(85, 84, 84);
-    border: unset;
-}
 .sidebar{
     background-color: rgb(167, 165, 165);
     display: block;
     height: calc(100% - 3.5em);
     width: 12em;
-    top: 3.5em;
+    top: 3.2em;
     position: absolute;
 }
 

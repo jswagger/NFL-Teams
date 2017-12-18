@@ -9,17 +9,45 @@ export class AppComponent {
   public title: string;
   public sidebarOpen: string;
   public teamsList: Array<any>;
+  public divisionsList: Array<any>;
   public profileOpen: boolean;
+  public divisionOpen: boolean;
   public selectedTeam: SelectionObject;
-
+  public selectedDivision: SelectionObject;
+  
   constructor() {
   }
   ngOnInit(){
     this.title = '32 Teams';
     this.sidebarOpen = "inline-block";
     this.teamsList = this.getTeamsList();
-
+    this.divisionsList = this.getDivisionsList();
+    
   };
+  public toggleSidebar() {
+    if (this.sidebarOpen = "false"){
+      this.sidebarOpen = "true";
+    };
+    if (this.sidebarOpen = "true"){
+      this.sidebarOpen = "false";
+    };
+  };
+
+  public teamSelectChange(){
+    console.log("team selected")
+   // this.getTeamInfo(id);
+   console.log(this.selectedTeam.name);
+   this.profileOpen = true;
+   this.divisionOpen = false;
+  }
+  public divisionSelectChange(){
+    console.log("division selected")
+   // this.getTeamInfo(id);
+   console.log(this.selectedDivision.name);
+   this.profileOpen = false;
+   this.divisionOpen = true;
+  }
+
   private getTeamsList(){
     return [
       {
@@ -37,24 +65,48 @@ export class AppComponent {
       {
         name: "Chicago Bears",
         value: "CHI"
+      }
+    ]
+  }
+  private getDivisionsList(){
+    return [
+      {
+        name: "NFC North",
+        value: "NCN"
+      },
+      {
+        name: "NFC South",
+        value: "NCS"
+      },
+      {
+        name: "NFC East",
+        value: "NCE"
+      },
+      {
+        name: "NFC West",
+        value: "NCW"
+      },
+      {
+        name: "AFC North",
+        value: "ACN"
+      },
+      {
+        name: "AFC South",
+        value: "NCS"
+      },
+      {
+        name: "AFC East",
+        value: "ACE"
+      },
+      {
+        name: "AFC West",
+        value: "ACW"
       },
     ]
   }
 
-  public toggleSidebar() {
-    if (this.sidebarOpen = "false"){
-      this.sidebarOpen = "true";
-    };
-    if (this.sidebarOpen = "true"){
-      this.sidebarOpen = "false";
-    };
-  };
+  
 
-  public teamSelectChange(){
-    console.log("team selected")
-   // this.getTeamInfo(id);
-   this.profileOpen = true;
-  }
 
   private getTeamInfo(id) {
     if (id = "MIN") {

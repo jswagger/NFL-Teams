@@ -3,23 +3,27 @@
   <link rel="stylesheet" href = "/assets/font-awesome/css/font-awesome.min.css">
 </head>
 <div class = "nav-bar main-toolbar">NFL Teams
-  <button class = "fa fa-area-chart sidebar-button" (click)="toggleSidebar()"></button>
 </div>
 <div class = "main-view">
     <img class="main-logo" width="300" src="/assets/images/NFL_logo.PNG">
 </div>
-<h4>Team Profiles:</h4>
-<select class = "team-select" (change)="teamSelectChange()">
-  <option *ngFor="let item of teamsList">{{item.name}}</option>
-</select>
-<div class="sidebar" [ngStyle]="{ 'display': sideBarOpen ? 'block' : 'none' }">
+<div class="sidebar">
+  <mat-form-field>
+    <mat-select placeholder="Team Profiles" [(ngModel)]="selectedTeam" (change)="teamSelectChange()">
+      <mat-option *ngFor="let item of teamsList" [value]="item.value">
+        {{item.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+      <mat-select placeholder="Divisions" [(ngModel)]="selectedDivision" (change)="divisionSelectChange()">
+        <mat-option *ngFor="let item of divisionsList" [value]="item.value">
+          {{item.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
 <ul>
-  <li>
-    <h3><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Profiles</a></h3>
-  </li>
-  <li>
-    <h3><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">Divisions</a></h3>
-  </li>
   <li>
     <h3><a target="_blank" rel="noopener" href="https://blog.angular.io/">Stadiums</a></h3>
   </li>
