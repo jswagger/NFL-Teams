@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatSelectModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatSelectModule, MatCardModule} from '@angular/material';
 import { FormsModule } from '@angular/forms';
 
 
@@ -17,6 +17,7 @@ import { AppComponent } from './app.component';
     MatButtonModule, 
     MatCheckboxModule, 
     MatSelectModule,
+    MatCardModule,
     FormsModule
   ],
   providers: [],

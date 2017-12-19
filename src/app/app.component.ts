@@ -13,6 +13,8 @@ export class AppComponent {
   public profileOpen: boolean;
   public divisionOpen: boolean;
   public selectedTeam: SelectionObject;
+  public selectedTeamObject: any;
+  public currentRank: number;
   public selectedDivision: SelectionObject;
   
   constructor() {
@@ -22,6 +24,8 @@ export class AppComponent {
     this.sidebarOpen = "inline-block";
     this.teamsList = this.getTeamsList();
     this.divisionsList = this.getDivisionsList();
+    this.selectedTeamObject = {};
+    this.currentRank = 0;
     
   };
   public toggleSidebar() {
@@ -34,9 +38,11 @@ export class AppComponent {
   };
 
   public teamSelectChange(){
-    console.log("team selected")
-   // this.getTeamInfo(id);
-   console.log(this.selectedTeam.name);
+   console.log("team selected")
+   console.log(this.getTeamInfo(this.selectedTeam.value))
+   let selectedTeamObject = this.getTeamInfo(this.selectedTeam.value);
+   this.currentRank = selectedTeamObject.data[0].standings.divisionRank;
+   console.log(this.selectedTeam);
    this.profileOpen = true;
    this.divisionOpen = false;
   }
@@ -145,7 +151,7 @@ export class AppComponent {
                     "ticketUrl" : "http://www.nfl.com/tickets/houston-texans"
                 },
                 "standings" : {
-                    "overallWins":10,
+                    "overallWins":11,
                     "overallLosses":3,
                     "overallTies":0,
                     "divisionRank":1
