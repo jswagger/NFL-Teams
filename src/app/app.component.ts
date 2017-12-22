@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProfileComponent } from '../profile-component/profile.component'
 
 @Component({
   selector: 'app-root',
@@ -14,8 +15,8 @@ export class AppComponent {
   public divisionOpen: boolean;
   public selectedTeam: SelectionObject;
   public selectedTeamObject: any;
-  public currentRank: number;
   public selectedDivision: SelectionObject;
+  public teamProfile: ProfileComponent;
   
   constructor() {
   }
@@ -25,7 +26,6 @@ export class AppComponent {
     this.teamsList = this.getTeamsList();
     this.divisionsList = this.getDivisionsList();
     this.selectedTeamObject = {};
-    this.currentRank = 0;
     
   };
   public toggleSidebar() {
@@ -38,11 +38,10 @@ export class AppComponent {
   };
 
   public teamSelectChange(){
-   console.log("team selected")
-   console.log(this.getTeamInfo(this.selectedTeam.value))
-   let selectedTeamObject = this.getTeamInfo(this.selectedTeam.value);
-   this.currentRank = selectedTeamObject.data[0].standings.divisionRank;
-   console.log(this.selectedTeam);
+   this.teamProfile = new ProfileComponent;
+   let selectedTeamObject = this.teamProfile.getTeamInfo(this.selectedTeam.value);
+   this.teamProfile.setTeamData(selectedTeamObject.data[0], this.selectedTeam.value)
+   // this.teamProfile.teamData = selectedTeamObject.data[0];
    this.profileOpen = true;
    this.divisionOpen = false;
   }
@@ -114,53 +113,6 @@ export class AppComponent {
   
 
 
-  private getTeamInfo(id) {
-    if (id = "MIN") {
-      return {
-        "pager": {},
-        "data": [
-            {
-                "branding": {
-                    "logos" : [
-                        {
-                            "href" : "http://path.to/thumb/logo.jpg",
-                            "size" : "THUMB"
-                        },
-                        {
-                            "href" : "http://path.to/small/logo.jpg",
-                            "size" : "SMALL"
-                        },
-                        {
-                            "href" : "http://path.to/medium/logo.jpg",
-                            "size" : "MEDIUM"
-                        },
-                        {
-                            "href" : "http://path.to/mezzanine/logo.jpg",
-                            "size" : "MEZZANINE"
-                        }
-                    ]
-                },
-                "fullName": "Minnesota Vikings",
-                "conference": "NFC",
-                "division": "NCN",
-                "webDomain": "http://www.vikings.com",
-                "established": 1960,
-                "venue": {
-                    "name":"US Bank Stadium",
-                    "ticketPhoneNumber" : "832-667-2390",
-                    "ticketUrl" : "http://www.nfl.com/tickets/houston-texans"
-                },
-                "standings" : {
-                    "overallWins":11,
-                    "overallLosses":3,
-                    "overallTies":0,
-                    "divisionRank":1
-                }
-            }
-        ]
-     }
-    }
-  }
 }
 export class SelectionObject{
   public name: string;

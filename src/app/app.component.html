@@ -33,28 +33,9 @@
   </ul>
 </div>
 <div class = "team-profile-main" *ngIf="profileOpen">
-  <mat-card>
-    <div class = "team-profile-topbar">
-
-      <img class="team-profile-conf-logo" width="50" src="/assets/images/NFC_logo.png">
-      <h4 class = "team-profile-division">North</h4>
-      <h4 class = "team-profile-rank" [(ngModel)]="currentRank"></h4>
-      
-      
-      <h2 class = "team-profile-title">
-        <img class="team-profile-team-logo" width="50" src="/assets/images/MIN_logo.png">
-        Minnesota Vikings
-      </h2>
-      <h3 class = "team-profile-record">10-3</h3>
-      <h5 class = "team-profile-link" href="vikings.com">www.vikings.com</h5>
-    </div>
-    <ul>
-      <h4>Location: Minneapolis, MN</h4>
-      <h4>Venue: US Bank Stadium</h4>
-      <h4>Established 1960</h4>
-      <h4>Super Bowl Wins: 0</h4>
-    </ul>
-    <div class = "team-profile-map"></div>
-  </mat-card>
+  <profile-container></profile-container>
 </div>
+<div class = "divisions-main" *ngIf="divisionOpen">
+</div>
+  
 
