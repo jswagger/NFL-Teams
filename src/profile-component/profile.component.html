@@ -1,32 +1,23 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<head>
-  <link rel="stylesheet" href = "/assets/font-awesome/css/font-awesome.min.css">
-</head>
-<div class = "nav-bar main-toolbar">NFL Teams
-  <button class = "fa fa-area-chart sidebar-button" (click)="toggleSidebar()"></button>
+<div class = "profile-container">
+    <mat-card>
+        <div class = "team-profile-topbar">
+          <img class="team-profile-conf-logo" width="50" src={{currentconf}}>
+          <h4 class = "team-profile-division">North</h4>
+          <h4 class = "team-profile-rank">{{teamData.standings.divisionRank}}</h4>
+          <h2 class = "team-profile-title">
+            <img class="team-profile-team-logo" width="50" src={{currentID}}>
+            {{teamData.fullName}}
+          </h2>
+          <h3 class = "team-profile-record">
+            {{teamData.standings.overallWins}}-{{teamData.standings.overallLosses}}</h3>
+          <h5 class = "team-profile-link">{{teamData.webDomain}}</h5>
+        </div>
+        <ul>
+          <h4>Location: </h4>
+          <h4>Venue: {{teamData.venue.name}}</h4>
+          <h4>Established {{teamData.established}}</h4>
+          <h4>Super Bowl Wins: </h4>
+        </ul>
+        <div class = "team-profile-map"></div>
+      </mat-card>
 </div>
-<div class = "main-view">
-  <div class = "main-view-topbar">
-    <h3>
-      {{title}}
-    </h3>
-    <img class="main-logo" width="300" src="/assets/images/NFL_logo.PNG">
-  </div>
-</div>
-<div class="sidebar" [ngStyle]="{ 'display': sideBarOpen ? 'block' : 'none' }">
-<ul>
-  <li>
-    <h3><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Profiles</a></h3>
-  </li>
-  <li>
-    <h3><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">Divisions</a></h3>
-  </li>
-  <li>
-    <h3><a target="_blank" rel="noopener" href="https://blog.angular.io/">Stadiums</a></h3>
-  </li>
-  <li>
-    <h3><a target="_blank" rel="noopener" href="https://blog.angular.io/">News</a></h3>
-  </li>
-</ul>
-</div>
-
