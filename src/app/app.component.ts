@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ProfileComponent } from '../profile-component/profile.component'
+import { NgxCarousel } from 'ngx-carousel';
+import { ProfileComponent } from '../profile-component/profile.component';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,8 @@ export class AppComponent {
   public selectedTeamObject: any;
   public selectedDivision: SelectionObject;
   public teamProfile: ProfileComponent;
+  public currentTeam: any;
+  public carouselOne: NgxCarousel;
   
   constructor() {
   }
@@ -26,6 +29,7 @@ export class AppComponent {
     this.teamsList = this.getTeamsList();
     this.divisionsList = this.getDivisionsList();
     this.selectedTeamObject = {};
+    this.carouselOne = this.startCarousel();
     
   };
   public toggleSidebar() {
@@ -40,7 +44,8 @@ export class AppComponent {
   public teamSelectChange(){
    this.teamProfile = new ProfileComponent;
    let selectedTeamObject = this.teamProfile.getTeamInfo(this.selectedTeam.value);
-   this.teamProfile.setTeamData(selectedTeamObject.data[0], this.selectedTeam.value)
+   this.currentTeam = selectedTeamObject.data[0];
+   // this.teamProfile.setTeamData(selectedTeamObject.data[0], this.selectedTeam.value)
    // this.teamProfile.teamData = selectedTeamObject.data[0];
    this.profileOpen = true;
    this.divisionOpen = false;
@@ -110,8 +115,21 @@ export class AppComponent {
     ]
   }
 
-  
-
+  private startCarousel(): NgxCarousel {
+    return {
+      grid: {xs: 1, sm: 1, md: 1, lg: 1, all: 0},
+      slide: 1,
+      speed: 400,
+      interval: 4000,
+      point: {
+        visible: true
+      },
+      load: 2,
+      touch: true,
+      loop: true,
+      custom: 'banner'
+    }
+  }
 
 }
 export class SelectionObject{

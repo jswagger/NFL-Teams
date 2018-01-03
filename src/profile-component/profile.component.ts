@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'profile-container',
@@ -6,9 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-  public teamData: any;
   public currentLogo: string;
   public currentConf: string;
+
+  @Input()
+  public teamData: any;
   
   constructor() {
     this.teamData = {};
@@ -24,7 +26,7 @@ export class ProfileComponent {
     this.currentConf = "/assets/images/" + this.teamData.conference + "_logo.png";
   }
   public getTeamInfo(id) {
-    if (id = "MIN") {
+    if (id == "MIN") {
       return {
         "pager": {},
         "data": [
@@ -53,7 +55,7 @@ export class ProfileComponent {
                 "conference": "NFC",
                 "division": "NCN",
                 "webDomain": "http://www.vikings.com",
-                "established": 1960,
+                "established": 1961,
                 "venue": {
                     "name":"US Bank Stadium",
                     "ticketPhoneNumber" : "832-667-2390",
