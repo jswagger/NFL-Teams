@@ -1,6 +1,6 @@
-body{
+body, html{
     font-family: Calibri;
-    margin: unset;
+    margin: 0px !important;
 }
 h1, h2, h3, h4, h5, p{
     font-family: Calibri;
@@ -34,7 +34,7 @@ button{
 }
 .main-view{
     text-align: center;
-    height: calc(100% - 1.3em);
+    height: calc(100vh - 1.3em);
     width: 100%;
 }
 
@@ -44,23 +44,43 @@ button{
 }
 
 .main-carousel-item{
-    height: 100%;
-    width: 100%;
     text-align: center;
+}
+
+.main-carousel-item1{
+    background-image: url("/assets/images/banner_field.jpeg");
+}
+
+.main-carousel-item2{
+    background-image: url("/assets/images/banner_stadium2.jpg");
+}
+
+.main-carousel-item3{
+    background-image: url("/assets/images/banner_stadium.jpeg");
 }
 
 .main-carousel-image{
-    opacity: .8;
+    height: calc(100vh - 1.3em);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .main-carousel-caption{
-    bottom: 35%;
-    padding-left: 27%;
+    bottom: 45%;
+    margin: 0 auto;
+    text-align: center;
+    width: 23em;
+    opacity: 1;
+}
+
+.main-carousel-cap{
+    bottom: 45%;
     position: absolute;
     text-align: center;
     width: 23em;
-    
 }
+
 
 .main-carousel-title{
     color: #01172f;

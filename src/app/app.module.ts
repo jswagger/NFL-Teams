@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatSelectModule, MatCardModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatSelectModule, MatCardModule, MatGridListModule} from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { NgxCarouselModule } from 'ngx-carousel';
 
@@ -22,6 +22,7 @@ import { ProfileComponent } from '../profile-component/profile.component'
     MatCheckboxModule, 
     MatSelectModule,
     MatCardModule,
+    MatGridListModule,
     NgxCarouselModule
   ],
   providers: [],
