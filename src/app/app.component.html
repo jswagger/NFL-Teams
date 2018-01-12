@@ -2,74 +2,77 @@
 <head>
   <link rel="stylesheet" href = "/assets/font-awesome/css/font-awesome.min.css">
 </head>
-<div class = "nav-bar main-toolbar" margin= "0px">NFL Teams
+<div class = "nav-bar main-toolbar">NFL Teams
+  <i class="sidebar-button fa fa-bars"></i>
 </div>
-<div class = "main-view">
-    <!-- <img class="main-logo" width="300" src="/assets/images/NFL_logo.PNG"> -->
-    <ngx-carousel
-    class = "main-carousel"
-    [inputs]="carouselOne"
-    >
-      <ngx-item NgxCarouselItem class = "main-carousel-item" >
-        <div class="main-carousel-item1 main-carousel-image" >
-          <div class="main-carousel-caption">
-            <h1 class = "main-carousel-title">Teams</h1>
-            <p class = "main-carousel-description">View current team statistics and history</p>
-            <button class = "main-carousel-button fa fa-key"></button>
+<body margin="0px">
+  <div class = "main-view">
+      <!-- <img class="main-logo" width="300" src="/assets/images/NFL_logo.PNG"> -->
+      <ngx-carousel
+      class = "main-carousel"
+      [inputs]="carouselOne"
+      *ngIf="startView"
+      >
+        <ngx-item NgxCarouselItem class = "main-carousel-item" >
+          <div class="main-carousel-item1 main-carousel-image" margin="0em">
+            <div class="spacer"></div>
+            <div class="main-carousel-caption">
+              <h1 class = "main-carousel-title"><i class = "fa fa-group"></i> Teams</h1>
+              <p class = "main-carousel-description">View current team statistics and history</p>
+            </div>
           </div>
-        </div>
-    </ngx-item>
-      <ngx-item NgxCarouselItem class = "main-carousel-item  ">
-        <div class="main-carousel-item2 main-carousel-image" >
-          <div class="main-carousel-caption">
-            <h1 class = "main-carousel-title">Standings</h1>
-            <p class = "main-carousel-description">Analyze team standings within division and conference</p>
-            <button class = "main-carousel-button fa fa-key"></button>
-          </div>
-        </div>
-        </ngx-item>
-      <ngx-item NgxCarouselItem class = "main-carousel-item">
-        <div class="main-carousel-item3 main-carousel-image" >
-          <div class="main-carousel-caption">
-            <h1 class = "main-carousel-title">Stadiums</h1>
-            <p class = "main-carousel-description">Navigate to team venues using an interactive map</p>
-            <button class = "main-carousel-button fa fa-key"></button>
-          </div>
-        </div>
       </ngx-item>
-      <button NgxCarouselPrev class='main-carousel-leftRs'>&lt;</button>
-      <button NgxCarouselNext class='main-carousel-rightRs'>&gt;</button>
-    </ngx-carousel>
-</div>
-<div class="sidebar">
-  <mat-form-field>
-    <mat-select placeholder="Team Profiles" [(ngModel)]="selectedTeam" (change)="teamSelectChange()">
-      <mat-option *ngFor="let item of teamsList" [value]="item">
-        {{item.name}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field>
-      <mat-select placeholder="Divisions" [(ngModel)]="selectedDivision" (change)="divisionSelectChange()">
-        <mat-option *ngFor="let item of divisionsList" [value]="item">
+        <ngx-item NgxCarouselItem class = "main-carousel-item  ">
+          <div class="main-carousel-item2 main-carousel-image" >
+            <div class="spacer"></div>
+            <div class="main-carousel-caption">
+              <h1 class = "main-carousel-title"><i class = "fa fa-list-ol"></i> Standings</h1>
+              <p class = "main-carousel-description">Analyze team standings within division and conference</p>
+            </div>
+          </div>
+          </ngx-item>
+        <ngx-item NgxCarouselItem class = "main-carousel-item">
+          <div class="main-carousel-item3 main-carousel-image" >
+            <div class="spacer"></div>
+            <div class="main-carousel-caption">
+              <h1 class = "main-carousel-title"><i class = "fa fa-map-marker"></i> Stadiums</h1>
+              <p class = "main-carousel-description">Navigate to team venues using an interactive map</p>
+            </div>
+          </div>
+        </ngx-item>
+        <button NgxCarouselPrev class='main-carousel-leftRs'>&lt;</button>
+        <button NgxCarouselNext class='main-carousel-rightRs'>&gt;</button>
+      </ngx-carousel>
+  </div>
+  <div class="sidebar">
+    <mat-form-field>
+      <mat-select placeholder="Team Profiles" [(ngModel)]="selectedTeam" (change)="teamSelectChange()">
+        <mat-option *ngFor="let item of teamsList" [value]="item">
           {{item.name}}
         </mat-option>
       </mat-select>
     </mat-form-field>
-  
-  <ul>
-    <li>
-      <h3><a target="_blank" rel="noopener" href="https://blog.angular.io/">Stadiums</a></h3>
-    </li>
-    <li>
-      <h3><a target="_blank" rel="noopener" href="https://blog.angular.io/">News</a></h3>
-    </li>
-  </ul>
-</div>
-<div class = "team-profile-main" *ngIf="profileOpen">
-  <profile-container class="profile-holder" [teamData]=currentTeam></profile-container>
-</div>
-<div class = "divisions-main" *ngIf="divisionOpen">
-</div>
-  
+    <mat-form-field>
+        <mat-select placeholder="Divisions" [(ngModel)]="selectedDivision" (change)="divisionSelectChange()">
+          <mat-option *ngFor="let item of divisionsList" [value]="item">
+            {{item.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+    <ul>
+      <li>
+        <h3><a target="_blank" rel="noopener" href="https://blog.angular.io/">Stadiums</a></h3>
+      </li>
+      <li>
+        <h3><a target="_blank" rel="noopener" href="https://blog.angular.io/">News</a></h3>
+      </li>
+    </ul>
+  </div>
+  <div class = "team-profile-main" *ngIf="profileOpen">
+    <profile-container class="profile-holder" [teamData]=currentTeam></profile-container>
+  </div>
+  <div class = "divisions-main" *ngIf="divisionOpen">
+  </div>
+</body>
 

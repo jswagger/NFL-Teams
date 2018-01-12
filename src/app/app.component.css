@@ -4,27 +4,43 @@ body, html{
 }
 h1, h2, h3, h4, h5, p{
     font-family: Calibri;
+    font-weight: normal !important;
 }
 
 button{
     border: unset;
     border-radius: .5em;
-    background-color: #364d67;
-    box-shadow: 5px 5px 5px #01172f;
     cursor: pointer;
 }
-
+.spacer{
+    height: 1px;
+}
 .main-toolbar{
     background-color: rgb(85, 84, 84);
     color: rgb(184, 182, 182);
     font-family: Calibri;
     font-size: 34px;
     font-weight: bold;
-    height: 1.3em;
+    height: 2em;
     text-align: center;
-    width: 100%
+    width: 100%;
+    position: absolute;
+    display: inline-block;
+    top: 0px;
+    opacity: .5;
+    z-index: 10;
 }
-
+.sidebar-button{
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+}
+    .sidebar-button:hover{
+        border:1px solid #01172f;
+    }
 .main-view-topbar{
     background-color: rgb(192, 189, 189);
     color: rgb(43, 42, 42);
@@ -33,8 +49,7 @@ button{
     width: 100%
 }
 .main-view{
-    text-align: center;
-    height: calc(100vh - 1.3em);
+    height: 100vh;
     width: 100%;
 }
 
@@ -48,55 +63,71 @@ button{
 }
 
 .main-carousel-item1{
-    background-image: url("/assets/images/banner_field.jpeg");
+    background-image: url("/assets/images/banner_field2.jpg");
+    color: #fff;
+    text-shadow: 5px 5px 5px #01172f;
+    
 }
 
 .main-carousel-item2{
-    background-image: url("/assets/images/banner_stadium2.jpg");
+    background-image: url("/assets/images/banner_field3.jpg");
+    color: #fff;
+    text-shadow: 5px 5px 5px #01172f;
+    
 }
 
 .main-carousel-item3{
-    background-image: url("/assets/images/banner_stadium.jpeg");
+    background-image: url("/assets/images/banner_stadium3.jpg");
+    color: #fff;
+    text-shadow: 5px 5px 5px #01172f;
 }
 
 .main-carousel-image{
-    height: calc(100vh - 1.3em);
+    height: 100vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
 .main-carousel-caption{
-    bottom: 45%;
     margin: 0 auto;
     text-align: center;
+    margin-top: 48vh;
     width: 23em;
     opacity: 1;
+    padding: 3px;
+    transition: .4s;
+    font-weight: normal;
 }
-
-.main-carousel-cap{
-    bottom: 45%;
-    position: absolute;
-    text-align: center;
-    width: 23em;
-}
+    .main-carousel-caption:hover{
+        box-shadow: 5px 5px 5px #01172f;
+        border-radius: .5em;
+        cursor: pointer;
+    }
 
 
 .main-carousel-title{
-    color: #01172f;
 }
 
 .main-carousel-description{
-    color: #01172f;
     display: inline-block;
     font-weight: 600;
+    font-size: 22px;
 }
 
 .main-carousel-button{
     font-size: 1.3em;
-    height: 2.5em;
-    width: 8em;
+    height: 10em;
+    width: 16em;
+    opacity: .3;
+    position: absolute;
+    display: inline-block;
+    margin: 0 auto;
 }
+
+    .main-carousel-button:hover {
+        opacity: .5;
+    }
 
     .main-carousel-button:active {
         background-color: #034085;
@@ -129,30 +160,59 @@ button{
 .main-carousel-leftRs {
     position: absolute;
     margin: auto;
-    top: 0;
-    bottom: 0;
+    bottom: 22em;
     width: 50px;
     height: 50px;
     box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, .3);
     border-radius: 999px;
     left: 0;
+    opacity: .5;
+    transition: .4s;
+    background-color: #909faf;
+    
 }
+    .main-carousel-leftRs:hover {
+        opacity: 1;
+    }
+
+    .main-carousel-leftRs:active {
+        background-color: #034085;
+        border: solid 1px #808080;
+    }
 
 .main-carousel-rightRs {
     position: absolute;
     margin: auto;
-    top: 0;
-    bottom: 0;
+    bottom: 22em;
     width: 50px;
     height: 50px;
     box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, .3);
     border-radius: 999px;
     right: 0;
+    opacity: .5;
+    transition: .4s;
+    background-color: #909faf;
+    
 }
+    .main-carousel-rightRs:hover {
+        opacity: 1;
+    }
 
-.ngxcarouselPointDefault, .ng-star-inserted{
+    .main-carousel-rightRs:active {
+        background-color: #034085;
+        border: solid 1px #808080;
+    }
+
+.ngxcarouselPointDefault{
     position: absolute;
-    bottom: 30%;
-    padding-left: 27%;
+    margin: auto;
+    bottom: 8em;
+    width: 50px;
+    height: 50px;
+    box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, .3);
+    border-radius: 999px;
+    right: 0;
+    opacity: .5;
+    transition: .4s;
 
 }
