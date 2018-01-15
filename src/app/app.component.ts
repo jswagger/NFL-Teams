@@ -21,6 +21,7 @@ export class AppComponent {
   public currentTeam: any;
   public carouselOne: NgxCarousel;
   public startView: boolean;
+  public teamsListView: boolean;
   
   constructor() {
   }
@@ -32,6 +33,7 @@ export class AppComponent {
     this.selectedTeamObject = {};
     this.carouselOne = this.startCarousel();
     this.startView = true;
+    this.teamsListView = false;
     
   };
   public toggleSidebar() {
@@ -43,15 +45,6 @@ export class AppComponent {
     };
   };
 
-  public teamSelectChange(){
-   this.teamProfile = new ProfileComponent;
-   let selectedTeamObject = this.teamProfile.getTeamInfo(this.selectedTeam.value);
-   this.currentTeam = selectedTeamObject.data[0];
-   // this.teamProfile.setTeamData(selectedTeamObject.data[0], this.selectedTeam.value)
-   // this.teamProfile.teamData = selectedTeamObject.data[0];
-   this.profileOpen = true;
-   this.divisionOpen = false;
-  }
   public divisionSelectChange(){
     console.log("division selected")
    // this.getTeamInfo(id);
@@ -60,6 +53,22 @@ export class AppComponent {
    this.divisionOpen = true;
   }
 
+  public openTeamsList(){
+    this.startView = false;
+    this.teamsListView = true;
+  }
+
+  public openTeamProfile(team){
+    this.teamProfile = new ProfileComponent;
+    let selectedTeamObject = this.teamProfile.getTeamInfo(team);
+    this.currentTeam = selectedTeamObject.data[0];
+    // this.teamProfile.setTeamData(selectedTeamObject.data[0], this.selectedTeam.value)
+    // this.teamProfile.teamData = selectedTeamObject.data[0];
+    this.startView = false;
+    this.teamsListView = false;
+    this.profileOpen = true;
+    this.divisionOpen = false;
+   }
   private getTeamsList(){
     return [
       {

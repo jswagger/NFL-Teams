@@ -6,15 +6,18 @@
   <i class="sidebar-button fa fa-bars"></i>
 </div>
 <body margin="0px">
-  <div class = "main-view">
+  <mat-sidenav-container>
+    <mat-sidenav></mat-sidenav>
+  </mat-sidenav-container>
+  <div class = "main-view" *ngIf="startView">
       <!-- <img class="main-logo" width="300" src="/assets/images/NFL_logo.PNG"> -->
       <ngx-carousel
       class = "main-carousel"
       [inputs]="carouselOne"
-      *ngIf="startView"
+      
       >
         <ngx-item NgxCarouselItem class = "main-carousel-item" >
-          <div class="main-carousel-item1 main-carousel-image" margin="0em">
+          <div class="main-carousel-item1 main-carousel-image" margin="0em" (click)="openTeamsList()">
             <div class="spacer"></div>
             <div class="main-carousel-caption">
               <h1 class = "main-carousel-title"><i class = "fa fa-group"></i> Teams</h1>
@@ -44,6 +47,118 @@
         <button NgxCarouselNext class='main-carousel-rightRs'>&gt;</button>
       </ngx-carousel>
   </div>
+  <div class="teams-list-wrapper" *ngIf="teamsListView"> 
+    <h3 class="teams-list-wrapper-title"><i class="fa fa-group"></i> Teams</h3>
+    <div class="cols">
+        <div class="teams-list-col" ontouchstart="this.classList.toggle('hover');" ng (click)="openTeamProfile('MIN')">
+          <div class="container">
+            <div class="front" style="background-image: url(/assets/images/MIN_logo.png)">
+              <div class="inner">
+                <p>Minnesota Vikings</p>
+                <span>NFC North</span>
+              </div>
+            </div>
+            <div class="back">
+              <div class="inner">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="teams-list-col" ontouchstart="this.classList.toggle('hover');">
+          <div class="container">
+            <div class="front" style="background-image: url(/assets/images/GB_logo.png)">
+              <div class="inner">
+                <p>Green Bay Packers</p>
+                <span>NFC North</span>
+              </div>
+            </div>
+            <div class="back">
+              <div class="inner">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="teams-list-col" ontouchstart="this.classList.toggle('hover');">
+          <div class="container">
+            <div class="front" style="background-image: url(/assets/images/DET_logo.PNG)">
+              <div class="inner">
+                <p>Detroit Lions</p>
+                <span>NFC North</span>
+              </div>
+            </div>
+            <div class="back">
+              <div class="inner">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="teams-list-col" ontouchstart="this.classList.toggle('hover');">
+          <div class="container">
+            <div class="front" style="background-image: url(/assets/images/CHI_logo.png)">
+              <div class="inner">
+                <p>Chicago Bears</p>
+                <span>NFC North</span>
+              </div>
+            </div>
+            <div class="back">
+              <div class="inner">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="teams-list-col" ontouchstart="this.classList.toggle('hover');">
+          <div class="container">
+            <div class="front" style="background-image: url(https://unsplash.it/504/504/">
+              <div class="inner">
+                <p>Rendann</p>
+                <span>Lorem ipsum</span>
+              </div>
+            </div>
+            <div class="back">
+              <div class="inner">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="teams-list-col" ontouchstart="this.classList.toggle('hover');">
+          <div class="container">
+            <div class="front" style="background-image: url(https://unsplash.it/505/505/)">
+              <div class="inner">
+                <p>Reflupper</p>
+                <span>Lorem ipsum</span>
+              </div>
+            </div>
+            <div class="back">
+              <div class="inner">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="teams-list-col" ontouchstart="this.classList.toggle('hover');">
+          <div class="container">
+            <div class="front" style="background-image: url(https://unsplash.it/506/506/)">
+              <div class="inner">
+                <p>Acirassi</p>
+                <span>Lorem ipsum</span>
+              </div>
+            </div>
+            <div class="back">
+              <div class="inner">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   </div>
+  
+    
   <div class="sidebar">
     <mat-form-field>
       <mat-select placeholder="Team Profiles" [(ngModel)]="selectedTeam" (change)="teamSelectChange()">

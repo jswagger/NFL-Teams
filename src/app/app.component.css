@@ -4,7 +4,6 @@ body, html{
 }
 h1, h2, h3, h4, h5, p{
     font-family: Calibri;
-    font-weight: normal !important;
 }
 
 button{
@@ -16,18 +15,17 @@ button{
     height: 1px;
 }
 .main-toolbar{
-    background-color: rgb(85, 84, 84);
+    background-color: rgba(85, 84, 84, .7);
     color: rgb(184, 182, 182);
     font-family: Calibri;
     font-size: 34px;
     font-weight: bold;
-    height: 2em;
+    height: 1.5em;
     text-align: center;
     width: 100%;
     position: absolute;
     display: inline-block;
     top: 0px;
-    opacity: .5;
     z-index: 10;
 }
 .sidebar-button{
@@ -37,14 +35,21 @@ button{
     font-size: 30px;
     width: 30px;
     height: 30px;
+    transition: .4s;
 }
     .sidebar-button:hover{
-        border:1px solid #01172f;
+        color: #01172f;
+        cursor: pointer;
     }
+    .sidebar-button:active{
+        color: #034085;
+    }
+
+    
 .main-view-topbar{
-    background-color: rgb(192, 189, 189);
+    background-color: rgb(192, 189, 189, .7);
     color: rgb(43, 42, 42);
-    height: 2em;
+    height: 1.5em;
     text-align: center;
     width: 100%
 }
@@ -98,20 +103,26 @@ button{
     padding: 3px;
     transition: .4s;
     font-weight: normal;
+    background-color: rgba(85, 84, 84, .4);
+    border-radius: 5px;
 }
     .main-carousel-caption:hover{
         box-shadow: 5px 5px 5px #01172f;
-        border-radius: .5em;
         cursor: pointer;
+    }
+    .main-carousel-caption:active{
+        box-shadow: 5px 5px 5px #034085;
     }
 
 
+
 .main-carousel-title{
+    font-weight: normal;
 }
 
 .main-carousel-description{
     display: inline-block;
-    font-weight: 600;
+    font-weight: 300;
     font-size: 22px;
 }
 
@@ -160,47 +171,41 @@ button{
 .main-carousel-leftRs {
     position: absolute;
     margin: auto;
-    bottom: 22em;
-    width: 50px;
-    height: 50px;
-    box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, .3);
-    border-radius: 999px;
+    bottom: 37vh;
     left: 0;
     opacity: .5;
     transition: .4s;
-    background-color: #909faf;
+    background-color: unset;
+    font-size: 100px;
     
 }
     .main-carousel-leftRs:hover {
         opacity: 1;
+        color: #01172f;
     }
 
     .main-carousel-leftRs:active {
-        background-color: #034085;
-        border: solid 1px #808080;
+        color: #034085;
     }
 
 .main-carousel-rightRs {
     position: absolute;
     margin: auto;
-    bottom: 22em;
-    width: 50px;
-    height: 50px;
-    box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, .3);
-    border-radius: 999px;
+    bottom: 37vh;
     right: 0;
     opacity: .5;
     transition: .4s;
-    background-color: #909faf;
+    background-color: unset;
+    font-size: 100px;
     
 }
     .main-carousel-rightRs:hover {
         opacity: 1;
+        color: #01172f;
     }
 
     .main-carousel-rightRs:active {
-        background-color: #034085;
-        border: solid 1px #808080;
+        color: #034085;
     }
 
 .ngxcarouselPointDefault{
@@ -216,3 +221,185 @@ button{
     transition: .4s;
 
 }
+
+.teams-list-wrapper{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 80rem;
+    margin-top: 4em;
+  }
+  .teams-list-wrapper-title{
+      color: #01172f;
+  }
+  .cols{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  
+  .teams-list-col{
+    width: calc(25% - 2rem);
+    margin: 1rem;
+    cursor: pointer;
+  }
+  
+  .container{
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+      -webkit-perspective: 1000px;
+              perspective: 1000px;
+  }
+  
+  .front,
+  .back{
+    background-size: cover;
+      background-position: center;
+      -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      text-align: center;
+      min-height: 280px;
+      height: auto;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 1.5rem;
+  }
+  
+  .back{
+    background: #cedce7;
+    background: -webkit-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+    background: -o-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+    background: linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+  }
+  
+  .front:after{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      content: '';
+      display: block;
+      opacity: .6;
+      background-color: #000;
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      border-radius: 10px;
+  }
+  .container:hover .front,
+  .container:hover .back{
+      -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  }
+  
+  .back{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+  }
+  
+  .inner{
+      -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+              transform: translateY(-50%) translateZ(60px) scale(0.94);
+      top: 50%;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      padding: 2rem;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      outline: 1px solid transparent;
+      -webkit-perspective: inherit;
+              perspective: inherit;
+      z-index: 2;
+  }
+  
+  .container .back{
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg);
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+  }
+  
+  .container .front{
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+  }
+  
+  .container:hover .back{
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+  }
+  
+  .container:hover .front{
+    -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+  }
+  
+  .front .inner p{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  .front .inner p:after{
+    content: '';
+    width: 4rem;
+    height: 2px;
+    position: absolute;
+    background: #C6D4DF;
+    display: block;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -.75rem;
+  }
+  
+  .front .inner span{
+    color: rgba(255,255,255,0.7);
+    font-family: 'Montserrat';
+    font-weight: 300;
+  }
+  
+  @media screen and (max-width: 64rem){
+    .teams-list-col{
+      width: calc(33.333333% - 2rem);
+    }
+  }
+  
+  @media screen and (max-width: 48rem){
+    .teams-list-col{
+      width: calc(50% - 2rem);
+    }
+  }
+  
+  @media screen and (max-width: 32rem){
+    .teams-list-col{
+      width: 100%;
+      margin: 0 0 2rem 0;
+    }
+  }
+
+  .profile-container{
+      margin-top: 2em;
+  }
