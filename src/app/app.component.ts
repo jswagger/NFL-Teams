@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgxCarousel } from 'ngx-carousel';
-import { ProfileComponent } from '../profile-component/profile.component';
+import { TeamProfileComponent } from './team-profile/team-profile.component';
+import { TeamListComponent } from './team-list/team-list.component';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { ProfileComponent } from '../profile-component/profile.component';
 })
 export class AppComponent {
   public title: string;
-  public sidebarOpen: string;
+  public sidebarOpen: boolean;
   public teamsList: Array<any>;
   public divisionsList: Array<any>;
   public profileOpen: boolean;
@@ -17,7 +18,7 @@ export class AppComponent {
   public selectedTeam: SelectionObject;
   public selectedTeamObject: any;
   public selectedDivision: SelectionObject;
-  public teamProfile: ProfileComponent;
+  public teamProfile: TeamProfileComponent;
   public currentTeam: any;
   public carouselOne: NgxCarousel;
   public startView: boolean;
@@ -27,21 +28,30 @@ export class AppComponent {
   }
   ngOnInit(){
     this.title = '32 Teams';
-    this.sidebarOpen = "inline-block";
     this.teamsList = this.getTeamsList();
     this.divisionsList = this.getDivisionsList();
     this.selectedTeamObject = {};
     this.carouselOne = this.startCarousel();
+    this.startingView();
+  };
+
+  public startingView(){
+    this.sidebarOpen = false;
     this.startView = true;
     this.teamsListView = false;
-    
-  };
+  }
+  public openTeamsList(){
+    this.startView = false;
+    this.teamsListView = true;
+    this.sidebarOpen = false;
+  }
   public toggleSidebar() {
-    if (this.sidebarOpen = "false"){
-      this.sidebarOpen = "true";
+    if (this.sidebarOpen == false){
+      this.sidebarOpen = true;
+      return;
     };
-    if (this.sidebarOpen = "true"){
-      this.sidebarOpen = "false";
+    if (this.sidebarOpen == true){
+      this.sidebarOpen = false;
     };
   };
 
@@ -53,22 +63,6 @@ export class AppComponent {
    this.divisionOpen = true;
   }
 
-  public openTeamsList(){
-    this.startView = false;
-    this.teamsListView = true;
-  }
-
-  public openTeamProfile(team){
-    this.teamProfile = new ProfileComponent;
-    let selectedTeamObject = this.teamProfile.getTeamInfo(team);
-    this.currentTeam = selectedTeamObject.data[0];
-    // this.teamProfile.setTeamData(selectedTeamObject.data[0], this.selectedTeam.value)
-    // this.teamProfile.teamData = selectedTeamObject.data[0];
-    this.startView = false;
-    this.teamsListView = false;
-    this.profileOpen = true;
-    this.divisionOpen = false;
-   }
   private getTeamsList(){
     return [
       {

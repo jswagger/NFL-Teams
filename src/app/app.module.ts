@@ -7,12 +7,14 @@ import { NgxCarouselModule } from 'ngx-carousel';
 
 
 import { AppComponent } from './app.component';
-import { ProfileComponent } from '../profile-component/profile.component'
+import { TeamListComponent } from './team-list/team-list.component';
+import { TeamProfileComponent } from './team-profile/team-profile.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent
+    TeamListComponent,
+    TeamProfileComponent
     ],
   imports: [
     BrowserModule, 
