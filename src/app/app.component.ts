@@ -26,6 +26,7 @@ export class AppComponent {
   
   constructor() {
   }
+  
   ngOnInit(){
     this.title = '32 Teams';
     this.teamsList = this.getTeamsList();
@@ -40,11 +41,13 @@ export class AppComponent {
     this.startView = true;
     this.teamsListView = false;
   }
+  
   public openTeamsList(){
     this.startView = false;
     this.teamsListView = true;
     this.sidebarOpen = false;
   }
+  
   public toggleSidebar() {
     if (this.sidebarOpen == false){
       this.sidebarOpen = true;
@@ -83,6 +86,7 @@ export class AppComponent {
       }
     ]
   }
+  
   private getDivisionsList(){
     return [
       {
@@ -164,6 +168,7 @@ export class AppComponent {
   }
 
 }
+
 export class SelectionObject{
   public name: string;
 	public value: string;
