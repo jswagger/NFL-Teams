@@ -18,8 +18,7 @@
       <!-- <img class="main-logo" width="300" src="/assets/images/NFL_logo.PNG"> -->
       <ngx-carousel
       class = "main-carousel"
-      [inputs]="carouselOne"
-      
+      [inputs]="carouselOne"    
       >
         <ngx-item NgxCarouselItem class = "main-carousel-item" >
           <div class="main-carousel-item1 main-carousel-image" margin="0em" (click)="openTeamsList()">
@@ -53,7 +52,6 @@
       </ngx-carousel>
   </div>
   <teams-list-wrapper *ngIf="teamsListView"></teams-list-wrapper> 
-    
   <div class = "team-profile-main" *ngIf="profileOpen">
     <profile-container class="profile-holder" [teamData]=currentTeam></profile-container>
   </div>
