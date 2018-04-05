@@ -2,6 +2,7 @@ body, html{
     font-family: Calibri;
     margin: 0px !important;
 }
+
 h1, h2, h3, h4, h5, p{
     font-family: Calibri;
 }
@@ -11,9 +12,11 @@ button{
     border-radius: .5em;
     cursor: pointer;
 }
+
 .spacer{
     height: 1px;
 }
+
 .main-toolbar{
     background-color: rgba(85, 84, 84, .7);
     color: rgb(184, 182, 182);
@@ -28,6 +31,7 @@ button{
     top: 0px;
     z-index: 10;
 }
+
 .sidebar-button{
     position: absolute;
     left: 8px;
@@ -44,7 +48,6 @@ button{
     .sidebar-button:active{
         color: #034085;
     }
-
     
 .main-view-topbar{
     background-color: rgb(192, 189, 189, .7);
@@ -53,6 +56,7 @@ button{
     text-align: center;
     width: 100%
 }
+
 .main-view{
     height: 100vh;
     width: 100%;
@@ -114,8 +118,6 @@ button{
         box-shadow: 5px 5px 5px #034085;
     }
 
-
-
 .main-carousel-title{
     font-weight: normal;
 }
@@ -148,6 +150,7 @@ button{
 .main-logo{
     opacity: .4;
 }
+
 .sidebar{
     background-color: rgb(167, 165, 165);
     display: inline-block;
@@ -165,10 +168,10 @@ button{
     .sidebar-list-item:hover{
         cursor: pointer;
     }
+
 .profile-holder{
     display: block;
 }
-
 
 .main-carousel-item h1 {
     background-color: #ccc;
@@ -176,6 +179,7 @@ button{
     text-align: center;
     line-height: 300px;
 }
+
 .main-carousel-leftRs {
     position: absolute;
     margin: auto;
@@ -185,8 +189,7 @@ button{
     transition: .4s;
     background-color: unset;
     font-size: 100px;
-    
-}
+ }
     .main-carousel-leftRs:hover {
         opacity: 1;
         color: #01172f;
@@ -205,8 +208,7 @@ button{
     transition: .4s;
     background-color: unset;
     font-size: 100px;
-    
-}
+ }
     .main-carousel-rightRs:hover {
         opacity: 1;
         color: #01172f;
@@ -227,5 +229,4 @@ button{
     right: 0;
     opacity: .5;
     transition: .4s;
-
 }
