@@ -17,6 +17,7 @@ export class TeamProfileComponent{
     this.currentLogo = "";
     this.currentConf = "";
   }
+  
   ngOnInit(){
   };
 
@@ -25,6 +26,7 @@ export class TeamProfileComponent{
     this.currentLogo = "/assets/images/" + id + "_logo.png";
     this.currentConf = "/assets/images/" + this.teamData.conference + "_logo.png";
   }
+  
   public getTeamInfo(id) {
     if (id == "MIN") {
       return {
@@ -72,6 +74,4 @@ export class TeamProfileComponent{
      }
     }
   }
-
-
 }
